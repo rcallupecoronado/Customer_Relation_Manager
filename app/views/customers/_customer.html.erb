@@ -1,0 +1,26 @@
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <% if customer.image.attached? %>
+        <figure class="image is-128x128">
+          <%= image_tag customer.image, class: "is-rounded" %>
+        </figure>
+      <% else %>
+        <figure class="image is-128x128">
+          <%= image_tag "placeholder.png", class: "is-rounded" %>
+        </figure>
+      <% end %>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= customer.full_name %></strong> <br>
+          <small>Email:</small> <%= customer.email_address.present? ? customer.email_address : "N/A" %> <br>
+          <small>Phone:</small> <%= customer.phone_number.present? ? customer.phone_number : "N/A" %> <br>
+          <small>Notes:</small> <%= customer.notes.present? ? customer.notes : "No notes available" %>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
